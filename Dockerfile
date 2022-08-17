@@ -1,5 +1,5 @@
-FROM anasty17/mltb:latest
-RUN apt install wget -y;apt install curl -y
+FROM arshsisodiya/helioskirepo:public
+RUN apt install wget -y;apt install curl -y;apt install sudo -y
 RUN mkdir /maruf
 WORKDIR /maruf
 RUN chmod 777 /maruf
