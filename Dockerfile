@@ -1,10 +1,10 @@
 FROM arshsisodiya/helioskirepo:public
-RUN apt install wget -y;apt install curl -y;apt install sudo -y
-RUN mkdir /maruf
+
 WORKDIR /maruf
 RUN chmod 777 /maruf
-RUN wget -O do.sh https://get.docker.com/;bash do.sh
-RUN wget https://raw.githubusercontent.com/rootedcyber93/helios-mirror/master/Dockerfile;wget https://raw.githubusercontent.com/rootedcyber93/mbot-flow/main/mbot.sh;sudo bash mbot.sh;sudo docker build . --rm --force-rm --compress --pull --file Dockerfile -t ultroid
+RUN apt install git -y
+RUN pip3 install speedtest-cli
+RUN git clone https://github.com/rootedcyber93-1/helios-mirror
 
 
-
+RUN cd /maruf/helios*;pip3 install --no-cache-dir -r requirements.txt;bash start.sh
